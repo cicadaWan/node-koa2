@@ -1,7 +1,6 @@
 const Router = require('koa-router');
 const router = new Router;
 
-const user = require('../controller/user');
 const profile = require('../controller/profile');
 const register = require('../controller/register');
 
@@ -10,8 +9,5 @@ const register = require('../controller/register');
 router
   .use('/user/profile', profile.routes(), profile.allowedMethods())
   .use('/user/register', register.routes(), profile.allowedMethods())
-// router
-//   .post('/user/login', user.login)
-//   .get('/user/profile', user.profile)
-
+  
 module.exports = router
